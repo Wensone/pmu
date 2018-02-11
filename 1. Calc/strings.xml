@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Calc</string>
+    <!-- Калькулятор -->
+    <string name="btn_getPlus">+</string>
+    <string name="btn_getMinus">-</string>
+    <string name="btn_getMultiply">*</string>
+    <string name="btn_getDivide">/</string>
+    <string name="btn_getFrontBracket">(</string>
+    <string name="btn_getBackBracket">)</string>
+    <string name="btn_getResult">=</string>
+    <string name="btn_getDat">.</string>
+
+    <string name="text_empty">Введите выражение</string>
+    <string name="btn_removeSymbol">symb.clr</string>
+    <string name="btn_clear">C</string>
+    <string name="btn_0">0</string>
+    <string name="btn_1">1</string>
+    <string name="btn_2">2</string>
+    <string name="btn_3">3</string>
+    <string name="btn_4">4</string>
+    <string name="btn_5">5</string>
+    <string name="btn_6">6</string>
+    <string name="btn_7">7</string>
+    <string name="btn_8">8</string>
+    <string name="btn_9">9</string>
+    <!-- Калькулятор -->
+</resources>

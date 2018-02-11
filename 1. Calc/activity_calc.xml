@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp" >
+
+    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="4"
+        android:orientation="horizontal"
+        android:id="@+id/gridLayout2">
+
+        <EditText
+            android:id="@+id/calc_string"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_columnSpan="4"
+            android:layout_rowSpan="4"
+            android:layout_gravity="fill"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:hint="@string/text_empty"
+            android:text=""
+            android:maxLength="32"/>
+
+        <Button
+            android:text="@string/btn_clear"
+            android:layout_width="82dp"
+            android:layout_height="60dp"
+            android:onClick="add_Clear"
+            style="@style/Widget.AppCompat.Button.Colored" />
+        <Button
+            android:text="@string/btn_getFrontBracket"
+            android:layout_width="82dp"
+            android:layout_height="60dp"
+            android:onClick="add_frontBracket" />
+        <Button
+            android:text="@string/btn_getBackBracket"
+            android:layout_width="82dp"
+            android:layout_height="60dp"
+            android:onClick="add_backBracket" />
+
+        <Button
+            android:layout_width="82dp"
+            android:layout_height="60dp"
+            android:onClick="add_Remove"
+            android:textSize="10dp"
+            android:text="@string/btn_removeSymbol" />
+        <Button
+            android:text="@string/btn_7"
+            android:layout_width="82dp"
+            android:layout_height="60dp"
+            android:onClick="add_7" />
+        <Button
+            android:text="@string/btn_8"
+            android:layout_width="82dp"
+            android:layout_height="60dp"
+            android:onClick="add_8" />
+        <Button
+            android:text="@string/btn_9"
+            android:layout_width="82dp"
+            android:layout_height="60dp"
+            android:onClick="add_9" />
+        <Button
+            android:text="@string/btn_getDivide"
+            android:layout_width="82dp"
+            android:layout_height="60dp"
+            android:onClick="add_Divide" />
+        <Button
+            android:text="@string/btn_4"
+            android:layout_width="82dp"
+            android:layout_height="60dp"
+            android:onClick="add_4" />
+        <Button
+            android:text="@string/btn_5"
+            android:layout_width="82dp"
+            android:layout_height="60dp"
+            android:onClick="add_5" />
+        <Button
+            android:text="@string/btn_6"
+            android:layout_width="82dp"
+            android:layout_height="60dp"
+            android:onClick="add_6" />
+        <Button
+            android:text="@string/btn_getMultiply"
+            android:layout_width="82dp"
+            android:layout_height="60dp"
+            android:onClick="add_Multiply" />
+        <Button
+            android:text="@string/btn_1"
+            android:layout_width="82dp"
+            android:layout_height="60dp"
+            android:onClick="add_1" />
+        <Button
+            android:text="@string/btn_2"
+            android:layout_width="82dp"
+            android:layout_height="60dp"
+            android:onClick="add_2" />
+        <Button
+            android:text="@string/btn_3"
+            android:layout_width="82dp"
+            android:layout_height="60dp"
+            android:onClick="add_3" />
+        <Button
+            android:text="@string/btn_getMinus"
+            android:layout_width="82dp"
+            android:layout_height="60dp"
+            android:onClick="add_Minus" />
+        <Button
+            android:text="@string/btn_0"
+            android:layout_width="82dp"
+            android:layout_height="60dp"
+            android:onClick="add_0" />
+        <Button
+            android:text="@string/btn_getDat"
+            android:layout_width="82dp"
+            android:layout_height="60dp"
+            android:onClick="add_Dat" />
+        <Button
+            android:text="@string/btn_getResult"
+            android:layout_width="82dp"
+            android:layout_height="60dp"
+            android:onClick="CalculationExpression"
+            style="@style/Widget.AppCompat.Button.Colored" />
+        <Button
+            android:text="@string/btn_getPlus"
+            android:layout_width="82dp"
+            android:layout_height="60dp"
+            android:onClick="add_Plus" />
+    </GridLayout>
+
+
+</RelativeLayout>
