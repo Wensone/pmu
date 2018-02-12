@@ -4,20 +4,22 @@ import java.util.*;
 import java.lang.*;
 
 class RPN {
-    static Double Calculate(String input){
+    static String Calculate(String input){
         List<String> expression = Parse(input);
         if (isParse) {
-            return Counting(expression);
-        } else {
-            System.out.println("Выражение некорректно.");
+            try {
+                return Counting(expression);
+            } catch (Exception e) {
+                return "Выражение некорректно.";
+            }
         }
 
-        return 1.1;
+        return "Неизвестная ошибка.";
     }
 
     private static String OPERATORS = "+-*/";
 
-    private static String DELIMITERS = "() " + OPERATORS;
+    private static String DELIMITERS = "() ," + OPERATORS;
 
     private static boolean isParse = true;
 
@@ -35,6 +37,7 @@ class RPN {
                 return postfix;
             }
             if (curr.equals(" ")) continue;
+            if (isFunction(curr)) stack.push(curr);
             else if (isDelimiter(curr)) {
                 if (curr.equals("(")) stack.push(curr);
                 else if (curr.equals(")")) {
@@ -47,12 +50,13 @@ class RPN {
                         }
                     }
                     stack.pop();
-                    if (!stack.isEmpty()) {
+                    if (!stack.isEmpty() && isFunction(stack.peek())) {
                         postfix.add(stack.pop());
                     }
                 }
                 else {
-                    if (curr.equals("-") && (prev.equals("") || (isDelimiter(prev)  && !prev.equals(")")))) {
+                    if (curr.equals("-") && (prev.equals("") || (isDelimiter(prev) && !prev.equals(")")))) {
+                        // унарный минус
                         curr = "u-";
                     }
                     else {
@@ -83,10 +87,31 @@ class RPN {
         return postfix;
     }
 
-    private static Double Counting(List<String> postfix) {
+    private static boolean isFunction(String token) {
+        return (token.equals("log") ||
+                token.equals("sin") ||
+                token.equals("pow") ||
+                token.equals("cos") );
+    }
+
+    private static String Counting(List<String> postfix) {
         Deque<Double> stack = new ArrayDeque<Double>();
         for (String x : postfix) {
             switch (x) {
+                case "log":
+                    stack.push(Math.log10(stack.pop()));
+                    break;
+                case "sin":
+                    stack.push(Math.sin(stack.pop()));
+                    break;
+                case "pow":
+                    Double a_pow = stack.pop();
+                    Double b_pow = stack.pop();
+                    stack.push(Math.pow(b_pow, a_pow));
+                    break;
+                case "cos":
+                    stack.push(Math.cos(stack.pop()));
+                    break;
                 case "+":
                     stack.push(stack.pop() + stack.pop());
                     break;
@@ -106,12 +131,14 @@ class RPN {
                 case "u-":
                     stack.push(-stack.pop());
                     break;
+                case ",":
+                    break;
                 default:
                     stack.push(Double.valueOf(x));
                     break;
             }
         }
-        return stack.pop();
+        return Double.toString(stack.pop());
     }
 
     private static boolean isDelimiter(String token) {
