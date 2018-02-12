@@ -30,107 +30,129 @@
         <Button
             android:text="@string/btn_clear"
             android:layout_width="82dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:onClick="add_Clear"
             style="@style/Widget.AppCompat.Button.Colored" />
         <Button
             android:text="@string/btn_getFrontBracket"
             android:layout_width="82dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:onClick="add_frontBracket" />
         <Button
             android:text="@string/btn_getBackBracket"
             android:layout_width="82dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:onClick="add_backBracket" />
 
         <Button
             android:layout_width="82dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:onClick="add_Remove"
             android:textSize="10dp"
             android:text="@string/btn_removeSymbol" />
         <Button
             android:text="@string/btn_7"
             android:layout_width="82dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:onClick="add_7" />
         <Button
             android:text="@string/btn_8"
             android:layout_width="82dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:onClick="add_8" />
         <Button
             android:text="@string/btn_9"
             android:layout_width="82dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:onClick="add_9" />
         <Button
             android:text="@string/btn_getDivide"
             android:layout_width="82dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:onClick="add_Divide" />
         <Button
             android:text="@string/btn_4"
             android:layout_width="82dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:onClick="add_4" />
         <Button
             android:text="@string/btn_5"
             android:layout_width="82dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:onClick="add_5" />
         <Button
             android:text="@string/btn_6"
             android:layout_width="82dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:onClick="add_6" />
         <Button
             android:text="@string/btn_getMultiply"
             android:layout_width="82dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:onClick="add_Multiply" />
         <Button
             android:text="@string/btn_1"
             android:layout_width="82dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:onClick="add_1" />
         <Button
             android:text="@string/btn_2"
             android:layout_width="82dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:onClick="add_2" />
         <Button
             android:text="@string/btn_3"
             android:layout_width="82dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:onClick="add_3" />
         <Button
             android:text="@string/btn_getMinus"
             android:layout_width="82dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:onClick="add_Minus" />
         <Button
             android:text="@string/btn_0"
             android:layout_width="82dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:onClick="add_0" />
         <Button
             android:text="@string/btn_getDat"
             android:layout_width="82dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:onClick="add_Dat" />
         <Button
             android:text="@string/btn_getResult"
             android:layout_width="82dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:onClick="CalculationExpression"
             style="@style/Widget.AppCompat.Button.Colored" />
         <Button
             android:text="@string/btn_getPlus"
             android:layout_width="82dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:onClick="add_Plus" />
+
+        <Button
+            android:text="@string/btn_cos"
+            android:layout_width="82dp"
+            android:layout_height="50dp"
+            android:onClick="add_Cos" />
+        <Button
+            android:text="@string/btn_sin"
+            android:layout_width="82dp"
+            android:layout_height="50dp"
+            android:onClick="add_Sin" />
+        <Button
+            android:text="@string/btn_log"
+            android:layout_width="82dp"
+            android:layout_height="50dp"
+            android:onClick="add_Log" />
+        <Button
+            android:text="@string/btn_pow"
+            android:layout_width="82dp"
+            android:layout_height="50dp"
+            android:onClick="add_Pow" />
+
     </GridLayout>
 
 
