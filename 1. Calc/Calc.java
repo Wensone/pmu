@@ -6,12 +6,9 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
 import android.widget.EditText;
-
-import java.math.BigDecimal;
 import java.lang.*;
 
 public class Calc extends AppCompatActivity {
-
     @SuppressLint("StaticFieldLeak")
     protected static EditText SourceEdit;
     protected static String LocalEdit;
@@ -23,7 +20,7 @@ public class Calc extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calc);
 
-        SourceEdit = (EditText) findViewById(R.id.calc_string);
+        SourceEdit = findViewById(R.id.calc_string);
         SourceEdit.setInputType(InputType.TYPE_NULL);
 
         LocalEdit = SourceEdit.getText().toString();
@@ -34,14 +31,31 @@ public class Calc extends AppCompatActivity {
         String expression = SourceEdit.getText().toString();
         if (expression.length() == 0 || !isCalculate) return;
 
-        double res_numb = RPN.Calculate(expression);
-        String str = Double.toString(res_numb);
-/*
-        BigDecimal n = new BigDecimal(str);
-        str = n.toPlainString();
-*/
-        LocalEdit = str;
-        SourceEdit.setText(str);
+        String res_numb = RPN.Calculate(expression);
+        LocalEdit = res_numb;
+        SourceEdit.setText(res_numb);
+    }
+
+    public void add_Cos(View v){
+        LocalEdit += "cos(";
+        setTextInSourceWindow();
+    }
+
+    public void add_Sin(View v){
+        LocalEdit += "sin(";
+        setTextInSourceWindow();
+    }
+
+    public void add_Log(View v){
+        LocalEdit += "log(";
+        setTextInSourceWindow();
+    }
+
+    public void add_Pow(View v){
+        Character tmp = LocalEdit.charAt(LocalEdit.length()-1);
+        add_Remove(v);
+        LocalEdit += "pow(" + tmp + ", ";
+        setTextInSourceWindow();
     }
 
     private void setTextInSourceWindow() {
@@ -50,6 +64,15 @@ public class Calc extends AppCompatActivity {
     }
 
     public void add_0(View v) {
+        LocalEdit = SourceEdit.getText().toString();
+        if (LocalEdit.length() == 0) return;
+
+        if(LocalEdit.charAt(LocalEdit.length()-1) == '/'){
+            LocalEdit = "Деление на 0 невозможно";
+            setTextInSourceWindow();
+            return;
+        }
+
         LocalEdit += "0";
         setTextInSourceWindow();
     }
