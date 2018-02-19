@@ -19,7 +19,7 @@ class RPN {
 
     private static String OPERATORS = "+-*/";
 
-    private static String DELIMITERS = "() ," + OPERATORS;
+    public static String DELIMITERS = "() ," + OPERATORS;
 
     private static boolean isParse = true;
 
@@ -41,7 +41,7 @@ class RPN {
             else if (isDelimiter(curr)) {
                 if (curr.equals("(")) stack.push(curr);
                 else if (curr.equals(")")) {
-                    while (!stack.peek().equals("(")) {
+                    while (!stack.isEmpty() && !stack.peek().equals("(")) {
                         postfix.add(stack.pop());
                         if (stack.isEmpty()) {
                             System.out.println("Скобки не согласованы.");
@@ -49,7 +49,7 @@ class RPN {
                             return postfix;
                         }
                     }
-                    stack.pop();
+                    if(!stack.isEmpty()) stack.pop();
                     if (!stack.isEmpty() && isFunction(stack.peek())) {
                         postfix.add(stack.pop());
                     }
