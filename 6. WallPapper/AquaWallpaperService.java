@@ -61,13 +61,13 @@ public class AquaWallpaperService extends WallpaperService {
         public void onCreate(SurfaceHolder surfaceHolder) {
             super.onCreate(surfaceHolder);
 
-            bmpFish= new Bitmap[]{BitmapFactory.decodeResource(getResources(), R.drawable.fishsimple),
-                    BitmapFactory.decodeResource(getResources(), R.drawable.fishsimple1),
-                    BitmapFactory.decodeResource(getResources(), R.drawable.fishsimple2)
+            bmpFish= new Bitmap[]{BitmapFactory.decodeResource(getResources(), R.drawable.littlefish0),
+                    BitmapFactory.decodeResource(getResources(), R.drawable.littlefish1),
+                    BitmapFactory.decodeResource(getResources(), R.drawable.littlefish2)
             };
-            bmpDeadFish = BitmapFactory.decodeResource(getResources(), R.drawable.dead);
+            bmpDeadFish = BitmapFactory.decodeResource(getResources(), R.drawable.deadfish);
             bmpWater = BitmapFactory.decodeResource(getResources(), R.drawable.water);
-            bmpBottom = BitmapFactory.decodeResource(getResources(), R.drawable.bottom2);
+            bmpBottom = BitmapFactory.decodeResource(getResources(), R.drawable.seaweed2);
 
             receiver = new BroadcastReceiver() {
                 @Override
